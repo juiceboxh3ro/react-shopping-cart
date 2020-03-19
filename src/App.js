@@ -22,7 +22,7 @@ export default function App() {
 	return (
 		<div className="App">
 			<CartContext.Provider value={cart}>
-				<Navigation cart={cart} />
+				<Navigation />
 
 				{/* Routes */}
 				<ProductContext.Provider value={{products, addItem}}>
