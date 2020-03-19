@@ -19,9 +19,13 @@ export default function App() {
 		setCart([...cart, item]);
 	};
 
+	const removeItem = id => {
+		setCart(cart.filter(i => {return i.id !== id}))
+	}
+
 	return (
 		<div className="App">
-			<CartContext.Provider value={cart}>
+			<CartContext.Provider value={{cart, removeItem}}>
 				<Navigation />
 
 				{/* Routes */}
@@ -32,7 +36,6 @@ export default function App() {
 				</ProductContext.Provider>
 
 				<Route path="/cart">
-					{/* <ShoppingCart /> */}
 					<ShoppingCart />
 				</Route>
 			</CartContext.Provider>
